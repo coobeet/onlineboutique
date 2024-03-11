@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ob.v1;
+
+service CurrencyService {
+  rpc ListSupportedCurrencies(ListSupportedCurrenciesRequest) returns (ListSupportedCurrenciesResponse) {}
+}
+
+message ListSupportedCurrenciesRequest {}
+
+message ListSupportedCurrenciesResponse {
+  // The 3-letter currency code defined in ISO 4217.
+  repeated string currency_codes = 1;
+}
