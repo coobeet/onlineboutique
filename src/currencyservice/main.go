@@ -30,6 +30,7 @@ import (
 
 //go:embed data/currency_conversion.json
 var currencyConversionBytes []byte
+
 var currencyConversion map[string]string
 
 func init() {
