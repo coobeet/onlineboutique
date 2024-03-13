@@ -13,6 +13,23 @@ networks:
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
+  cartservice:
+    image: ${IMAGE_NAME}:${IMAGE_VERSION}-cartservice
+    container_name: cartservice
+    build:
+      context: ./src/cartservice
+      cache_from:
+        - ${IMAGE_NAME}:${IMAGE_VERSION}-cartservice
+    deploy:
+      resources:
+        limits:
+          memory: 20M
+    restart: unless-stopped
+    ports:
+      - "${CART_SERVICE_PORT}"
+    environment:
+      - CART_SERVICE_PORT
+
   currencyservice:
     image: ${IMAGE_NAME}:${IMAGE_VERSION}-currencyservice
     container_name: currencyservice

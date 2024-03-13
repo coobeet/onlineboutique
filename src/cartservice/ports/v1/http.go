@@ -12,18 +12,18 @@ import (
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
-func NewHttpHandler() http.Handler {
+func NewHttpHandler() (string, http.Handler) {
 	otelIntercepor, err := otelconnect.NewInterceptor()
 	if err != nil {
 		log.Fatal(err)
 	}
-	_, handler := obv1connect.NewCartServiceHandler(
+	path, handler := obv1connect.NewCartServiceHandler(
 		NewConnectHandler(),
 		connect.WithInterceptors(
 			otelIntercepor,
 		),
 	)
-	return otelhttp.NewHandler(withCors(handler), "/")
+	return path, otelhttp.NewHandler(withCors(handler), "/")
 }
 
 func withCors(handler http.Handler) http.Handler {
