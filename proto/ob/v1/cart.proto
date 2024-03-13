@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ob.v1;
+
+message Cart {}
+
+service CartService {
+  rpc GetCart(GetCartRequest) returns (GetCartResponse) {}
+}
+
+message GetCartRequest {}
+
+message GetCartResponse {}
