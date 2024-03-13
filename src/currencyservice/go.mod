@@ -1,6 +1,6 @@
-module github.com/coobeet/onlineboutique
+module github.com/coobeet/onlineboutique/src/currencyservice
 
-go 1.21.5
+go 1.22
 
 require (
 	buf.build/gen/go/coobeet/onlineboutique/connectrpc/go v1.15.0-20240311165234-06ddd2069c6f.1

@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net"
 	"net/http"
 	"os"
@@ -30,9 +31,12 @@ func Run() (err error) {
 	mux := http.NewServeMux()
 	mux.Handle(portsv1.CurrencyServicePath, portsv1.NewHttpHandler())
 
+	var port string
+	mustMapEnv(&port, "CURRENCY_SERVICE_PORT")
+
 	// Start HTTP server.
 	srv := &http.Server{
-		Addr:         ":8080",
+		Addr:         ":" + port,
 		BaseContext:  func(_ net.Listener) context.Context { return ctx },
 		ReadTimeout:  time.Second,
 		WriteTimeout: 10 * time.Second,
@@ -57,4 +61,12 @@ func Run() (err error) {
 	// When Shutdown is called, ListenAndServe immediately returns ErrServerClosed.
 	err = srv.Shutdown(context.Background())
 	return
+}
+
+func mustMapEnv(target *string, envKey string) {
+	v := os.Getenv(envKey)
+	if v == "" {
+		panic(fmt.Sprintf("environment variable %q not set", envKey))
+	}
+	*target = v
 }
