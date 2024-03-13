@@ -29,7 +29,7 @@ func Run() (err error) {
 	}()
 
 	mux := http.NewServeMux()
-	mux.Handle(portsv1.CurrencyServicePath, portsv1.NewHttpHandler())
+	mux.Handle(portsv1.NewHttpHandler())
 
 	var port string
 	mustMapEnv(&port, "CURRENCY_SERVICE_PORT")
