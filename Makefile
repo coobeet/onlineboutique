@@ -29,7 +29,7 @@ endif
 ifdef service
 	docker compose stop $(service)
 	docker compose rm --force $(service)
-	docker compose create $(service)
+	docker compose create --build $(service)
 	docker compose start $(service)
 else
 	@echo "Please provide a service name using `service=[service name]` or `SERVICE=[service name]`"
