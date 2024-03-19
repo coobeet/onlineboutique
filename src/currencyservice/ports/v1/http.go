@@ -18,7 +18,7 @@ func NewHttpHandler() (string, http.Handler) {
 		log.Fatal(err)
 	}
 	path, handler := obv1connect.NewCurrencyServiceHandler(
-		NewConnectHandler(),
+		&connectHandler{},
 		connect.WithInterceptors(
 			otelIntercepor,
 		),

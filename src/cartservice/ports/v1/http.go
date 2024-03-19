@@ -18,7 +18,7 @@ func NewHttpHandler() (string, http.Handler) {
 		log.Fatal(err)
 	}
 	path, handler := obv1connect.NewCartServiceHandler(
-		NewConnectHandler(),
+		&connectHandler{},
 		connect.WithInterceptors(
 			otelIntercepor,
 		),
