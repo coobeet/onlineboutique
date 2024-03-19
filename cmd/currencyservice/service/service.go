@@ -10,7 +10,7 @@ import (
 	"os/signal"
 	"time"
 
-	portsv1 "github.com/coobeet/onlineboutique/src/currencyservice/ports/v1"
+	portsv1 "github.com/coobeet/onlineboutique/cmd/currencyservice/ports/v1"
 )
 
 func Run() (err error) {

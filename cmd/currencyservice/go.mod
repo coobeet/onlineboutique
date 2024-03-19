@@ -1,4 +1,4 @@
-module github.com/coobeet/onlineboutique/src/currencyservice
+module github.com/coobeet/onlineboutique/cmd/currencyservice
 
 go 1.22.1
 

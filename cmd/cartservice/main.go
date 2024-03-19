@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/coobeet/onlineboutique/src/cartservice/service"
+	"github.com/coobeet/onlineboutique/cmd/cartservice/service"
 )
 
 func main() {

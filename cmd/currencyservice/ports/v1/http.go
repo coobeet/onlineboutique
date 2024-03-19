@@ -23,7 +23,6 @@ func NewHttpHandler() (string, http.Handler) {
 			otelIntercepor,
 		),
 	)
-	// Add HTTP instrumentation for the whole server.
 	return path, otelhttp.NewHandler(withCors(handler), "/")
 }
 

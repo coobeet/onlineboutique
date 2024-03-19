@@ -1,4 +1,4 @@
-module github.com/coobeet/onlineboutique/src/cartservice
+module github.com/coobeet/onlineboutique/cmd/cartservice
 
 go 1.22.1
 

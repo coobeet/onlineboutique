@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/coobeet/onlineboutique/src/currencyservice/service"
+	"github.com/coobeet/onlineboutique/cmd/currencyservice/service"
 )
 
 func main() {
