@@ -11,7 +11,7 @@ import (
 	"os/signal"
 	"time"
 
-	portsv1 "github.com/coobeet/onlineboutique/cmd/cartservice/ports/v1"
+	"github.com/coobeet/onlineboutique/cmd/cartservice/ports"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/stdout/stdoutmetric"
 	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
@@ -35,8 +35,7 @@ func main() {
 		err = errors.Join(err, otelShutdown(context.Background()))
 	}()
 
-	mux := http.NewServeMux()
-	mux.Handle(portsv1.NewHttpHandler())
+	handler := ports.NewHttpHandler()
 
 	var port string
 	mustMapEnv(&port, "CART_SERVICE_PORT")
@@ -47,7 +46,7 @@ func main() {
 		BaseContext:  func(_ net.Listener) context.Context { return ctx },
 		ReadTimeout:  time.Second,
 		WriteTimeout: 10 * time.Second,
-		Handler:      mux,
+		Handler:      handler,
 	}
 	srvErr := make(chan error, 1)
 	go func() {

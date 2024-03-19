@@ -1,4 +1,4 @@
-package portsv1
+package ports
 
 import (
 	"log"
@@ -8,22 +8,24 @@ import (
 	"connectrpc.com/connect"
 	connectcors "connectrpc.com/cors"
 	"connectrpc.com/otelconnect"
+	portsv1 "github.com/coobeet/onlineboutique/cmd/cartservice/ports/v1"
 	"github.com/rs/cors"
-	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
-func NewHttpHandler() (string, http.Handler) {
+func NewHttpHandler() http.Handler {
+	mux := http.NewServeMux()
 	otelIntercepor, err := otelconnect.NewInterceptor()
 	if err != nil {
 		log.Fatal(err)
 	}
-	path, handler := obv1connect.NewCartServiceHandler(
-		&connectHandler{},
+	mux.Handle(obv1connect.NewCartServiceHandler(
+		portsv1.NewConnectHandler(),
 		connect.WithInterceptors(
 			otelIntercepor,
 		),
-	)
-	return path, otelhttp.NewHandler(withCors(handler), "/")
+	))
+	handler := withCors(mux)
+	return handler
 }
 
 func withCors(handler http.Handler) http.Handler {

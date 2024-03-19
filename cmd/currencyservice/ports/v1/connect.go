@@ -31,7 +31,11 @@ type connectHandler struct {
 	obv1connect.UnimplementedCurrencyServiceHandler
 }
 
-func (*connectHandler) ListSupportedCurrencies(
+func NewConnectHandler() obv1connect.CurrencyServiceHandler {
+	return connectHandler{}
+}
+
+func (connectHandler) ListSupportedCurrencies(
 	_ context.Context,
 	req *connect.Request[obv1.ListSupportedCurrenciesRequest],
 ) (*connect.Response[obv1.ListSupportedCurrenciesResponse], error) {

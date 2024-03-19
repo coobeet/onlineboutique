@@ -9,3 +9,7 @@ import (
 type connectHandler struct {
 	obv1connect.UnimplementedCartServiceHandler
 }
+
+func NewConnectHandler() obv1connect.CartServiceHandler {
+	return connectHandler{}
+}
