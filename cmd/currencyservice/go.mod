@@ -10,7 +10,6 @@ require (
 	connectrpc.com/otelconnect v0.7.0
 	github.com/rs/cors v1.10.1
 	github.com/samber/lo v1.39.0
-	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.49.0
 	go.opentelemetry.io/otel v1.24.0
 	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric v1.24.0
 	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.24.0
@@ -19,7 +18,6 @@ require (
 )
 
 require (
-	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/go-logr/logr v1.4.1 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	go.opentelemetry.io/otel/metric v1.24.0 // indirect
