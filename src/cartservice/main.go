@@ -11,7 +11,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/coobeet/onlineboutique/cmd/currencyservice/ports"
+	"github.com/coobeet/onlineboutique/src/cartservice/ports"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/stdout/stdoutmetric"
 	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
@@ -38,7 +38,7 @@ func main() {
 	handler := ports.NewHttpHandler()
 
 	var port string
-	mustMapEnv(&port, "CURRENCY_SERVICE_PORT")
+	mustMapEnv(&port, "CART_SERVICE_PORT")
 
 	// Start HTTP server.
 	srv := &http.Server{

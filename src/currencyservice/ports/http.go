@@ -8,7 +8,7 @@ import (
 	"connectrpc.com/connect"
 	connectcors "connectrpc.com/cors"
 	"connectrpc.com/otelconnect"
-	portsv1 "github.com/coobeet/onlineboutique/cmd/currencyservice/ports/v1"
+	portsv1 "github.com/coobeet/onlineboutique/src/currencyservice/ports/v1"
 	"github.com/rs/cors"
 )
 
