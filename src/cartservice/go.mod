@@ -4,7 +4,7 @@ go 1.22.1
 
 require (
 	buf.build/gen/go/coobeet/onlineboutique/connectrpc/go v1.15.0-20240313160751-8a920b4a57cd.1
-	connectrpc.com/connect v1.15.0
+	connectrpc.com/connect v1.16.0
 	connectrpc.com/cors v0.1.0
 	connectrpc.com/otelconnect v0.7.0
 	github.com/rs/cors v1.10.1
