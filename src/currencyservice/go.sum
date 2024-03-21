@@ -1,9 +1,13 @@
 buf.build/gen/go/coobeet/onlineboutique/connectrpc/go v1.15.0-20240313160751-8a920b4a57cd.1 h1:T/E1KFiJBM8aT61Xv5pMh5hvDgBOa/pdhg16cXscmDM=
 buf.build/gen/go/coobeet/onlineboutique/connectrpc/go v1.15.0-20240313160751-8a920b4a57cd.1/go.mod h1:m6q1diX4jRM05/jbv2KRmP+qjBKrKqBk1vxxkQiQC+c=
+buf.build/gen/go/coobeet/onlineboutique/connectrpc/go v1.16.0-20240313160751-8a920b4a57cd.1 h1:QXU62EIIy6MgKF7cvLaqf+r7uWCE6iDleVFLfkYK6to=
+buf.build/gen/go/coobeet/onlineboutique/connectrpc/go v1.16.0-20240313160751-8a920b4a57cd.1/go.mod h1:5n5iZ0EyjGZY/1U9vPnS0Az2+zPdYApBA6lBiyyU0bs=
 buf.build/gen/go/coobeet/onlineboutique/protocolbuffers/go v1.33.0-20240313160751-8a920b4a57cd.1 h1:j1euOVUvWBsmfXJHAJekW6YyVsQ+wSH9cuw2DVfq1Oo=
 buf.build/gen/go/coobeet/onlineboutique/protocolbuffers/go v1.33.0-20240313160751-8a920b4a57cd.1/go.mod h1:evbDO9R9a80pdh/85DIqyVp5u2/pfaxfDHqxRJNnjPQ=
 connectrpc.com/connect v1.15.0 h1:lFdeCbZrVVDydAqwr4xGV2y+ULn+0Z73s5JBj2LikWo=
 connectrpc.com/connect v1.15.0/go.mod h1:bQmjpDY8xItMnttnurVgOkHUBMRT9cpsNi2O4AjKhmA=
+connectrpc.com/connect v1.16.0 h1:rdtfQjZ0OyFkWPTegBNcH7cwquGAN1WzyJy80oFNibg=
+connectrpc.com/connect v1.16.0/go.mod h1:XpZAduBQUySsb4/KO5JffORVkDI4B6/EYPi7N8xpNZw=
 connectrpc.com/cors v0.1.0 h1:f3gTXJyDZPrDIZCQ567jxfD9PAIpopHiRDnJRt3QuOQ=
 connectrpc.com/cors v0.1.0/go.mod h1:v8SJZCPfHtGH1zsm+Ttajpozd4cYIUryl4dFB6QEpfg=
 connectrpc.com/otelconnect v0.7.0 h1:ZH55ZZtcJOTKWWLy3qmL4Pam4RzRWBJFOqTPyAqCXkY=
